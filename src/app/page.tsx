@@ -48,7 +48,7 @@ interface CircularProgressProps {
 const portfolioData = [
   {
     "id": 1,
-    "image": "assets/images/portfolio/juno.png",
+    "image": "/assets/images/portfolio/juno.png",
     "alt": "portfolio-02",
     "title": "Web Design",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -58,7 +58,7 @@ const portfolioData = [
   },
   {
     "id": 2,
-    "image": "assets/images/portfolio/demoFour.png",
+    "image": "/assets/images/portfolio/demoFour.png",
     "alt": "portfolio-03",
     "title": "Web Design",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -68,7 +68,7 @@ const portfolioData = [
   },
   {
     "id": 3,
-    "image": "assets/images/portfolio/crypto.png",
+    "image": "/assets/images/portfolio/crypto.png",
     "alt": "portfolio-04",
     "title": "Web Design",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -78,7 +78,7 @@ const portfolioData = [
   },
   {
     "id": 4,
-    "image": "assets/images/portfolio/cruptotwo.png",
+    "image": "/assets/images/portfolio/cruptotwo.png",
     "alt": "portfolio-22",
     "title": "Web Design",
     "subtitle": "It's a full crupto website with multiple pages with HTML, CSS, JS, JQUERY",
@@ -88,7 +88,7 @@ const portfolioData = [
   },
   {
     "id": 5,
-    "image": "assets/images/portfolio/score.png",
+    "image": "/assets/images/portfolio/score.png",
     "alt": "portfolio-05",
     "title": "Web Development",
     "subtitle": "It's very simple and clean full web design with HTML, CSS, JS, JQUERY",
@@ -98,7 +98,7 @@ const portfolioData = [
   },
   {
     "id": 6,
-    "image": "assets/images/portfolio/saint.png",
+    "image": "/assets/images/portfolio/saint.png",
     "alt": "portfolio-06",
     "title": "Web Development",
     "subtitle": "It's very simple and clean full web design with HTML, CSS, JS, JQUERY",
@@ -108,7 +108,7 @@ const portfolioData = [
   },
   {
     "id": 7,
-    "image": "assets/images/portfolio/demoOne.png",
+    "image": "/assets/images/portfolio/demoOne.png",
     "alt": "portfolio-07",
     "title": "Web Design",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -118,7 +118,7 @@ const portfolioData = [
   },
   {
     "id": 8,
-    "image": "assets/images/portfolio/royal-rooftop-club.png",
+    "image": "/assets/images/portfolio/royal-rooftop-club.png",
     "alt": "portfolio-08",
     "title": "React Design",
     "subtitle": "It's very simple and clean landing page design with React, Bootstrap",
@@ -128,7 +128,7 @@ const portfolioData = [
   },
   {
     "id": 9,
-    "image": "assets/images/portfolio/demoFive.png",
+    "image": "/assets/images/portfolio/demoFive.png",
     "alt": "portfolio-09",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -138,7 +138,7 @@ const portfolioData = [
   },
   {
     "id": 10,
-    "image": "assets/images/portfolio/demoSix.png",
+    "image": "/assets/images/portfolio/demoSix.png",
     "alt": "portfolio-10",
     "title": "Web Development",
     "subtitle": "Here you can make stylish name text with HTML, CSS, JS, JQUERY",
@@ -148,7 +148,7 @@ const portfolioData = [
   },
   {
     "id": 11,
-    "image": "assets/images/portfolio/denmentals.png",
+    "image": "/assets/images/portfolio/denmentals.png",
     "alt": "portfolio-11",
     "title": "React Design",
     "subtitle": "It's very simple and clean landing page design with React, Bootstrap",
@@ -158,7 +158,7 @@ const portfolioData = [
   },
   {
     "id": 12,
-    "image": "assets/images/portfolio/expectro.png",
+    "image": "/assets/images/portfolio/expectro.png",
     "alt": "portfolio-12",
     "title": "Web Development",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -168,7 +168,7 @@ const portfolioData = [
   },
   {
     "id": 13,
-    "image": "assets/images/portfolio/music.png",
+    "image": "/assets/images/portfolio/music.png",
     "alt": "portfolio-13",
     "title": "Web Development",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -178,7 +178,7 @@ const portfolioData = [
   },
   {
     "id": 14,
-    "image": "assets/images/portfolio/cruptoone.png",
+    "image": "/assets/images/portfolio/cruptoone.png",
     "alt": "portfolio-21",
     "title": "Web Development",
     "subtitle": "It's a full crypto currency website HTML, CSS, JS, JQUERY",
@@ -188,7 +188,7 @@ const portfolioData = [
   },
   {
     "id": 15,
-    "image": "assets/images/portfolio/resturent.png",
+    "image": "/assets/images/portfolio/resturent.png",
     "alt": "portfolio-14",
     "title": "Web Development",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -198,7 +198,7 @@ const portfolioData = [
   },
   {
     "id": 16,
-    "image": "assets/images/portfolio/dining.png",
+    "image": "/assets/images/portfolio/dining.png",
     "alt": "portfolio-15",
     "title": "Web Development",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -208,7 +208,7 @@ const portfolioData = [
   },
   {
     "id": 17,
-    "image": "assets/images/portfolio/stage.png",
+    "image": "/assets/images/portfolio/stage.png",
     "alt": "portfolio-16",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, Bootstrap, JS",
@@ -218,7 +218,7 @@ const portfolioData = [
   },
   {
     "id": 18,
-    "image": "assets/images/portfolio/traffic.png",
+    "image": "/assets/images/portfolio/traffic.png",
     "alt": "portfolio-17",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -228,7 +228,7 @@ const portfolioData = [
   },
   {
     "id": 19,
-    "image": "assets/images/portfolio/Ebook.png",
+    "image": "/assets/images/portfolio/Ebook.png",
     "alt": "portfolio-18",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
@@ -238,7 +238,7 @@ const portfolioData = [
   },
   {
     "id": 20,
-    "image": "assets/images/portfolio/bikerland.png",
+    "image": "/assets/images/portfolio/bikerland.png",
     "alt": "portfolio-19",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS",
@@ -248,7 +248,7 @@ const portfolioData = [
   },
   {
     "id": 21,
-    "image": "assets/images/portfolio/resturent1.png",
+    "image": "/assets/images/portfolio/resturent1.png",
     "alt": "portfolio-20",
     "title": "PSD to HTML",
     "subtitle": "It's very simple and clean landing page design with HTML, CSS",
@@ -258,7 +258,7 @@ const portfolioData = [
   },
   {
     "id": 22,
-    "image": "assets/images/portfolio/songlyrics.png",
+    "image": "/assets/images/portfolio/songlyrics.png",
     "title": "Music API data",
     "subtitle": "Here you can search the song and see the full song lyrics",
     "link": "https://songlyricsweb.netlify.app/",
@@ -443,8 +443,8 @@ export default function Home() {
   ];
 
   const filteredProjects = activeTab === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeTab);
+    ? portfolioData
+    : portfolioData.filter(project => project.category === activeTab);
 
   const [active, setActive] = useState("home");
 
@@ -562,9 +562,11 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  <Image
+                    src="/assets/images/portfolio/cruptoone.png"
                     alt="MD Saiful Islam"
+                    width={400}     // must set width
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
@@ -856,7 +858,7 @@ export default function Home() {
           <p className="text-gray-600 text-center mb-12">Here are some of my latest works</p>
 
           {/* Filter Tabs */}
-          <div className="flex justify-center mb-12">
+          {/* <div className="flex justify-center mb-12">
             <div className="flex space-x-4 bg-white rounded-full p-2 shadow-sm">
               {['all', 'web', 'mobile', 'design'].map((tab) => (
                 <button
@@ -871,19 +873,21 @@ export default function Home() {
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {filteredProjects.slice(0, visibleProjects).map((project) => (
               <div key={project.id} className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <img
+                <a href={project.link} className="relative overflow-hidden">
+                  <Image
                     src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                     alt="MD Saiful Islam"
+                    width={400}
+                    height={400}
+                    className="w-full h-58 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+                  {/* <div className="absolute inset-0  group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-3">
                       <button className="p-3 bg-white rounded-full text-blue-600 hover:bg-gray-100 transition-colors">
                         <Eye className="w-5 h-5" />
@@ -892,11 +896,11 @@ export default function Home() {
                         <ExternalLink className="w-5 h-5" />
                       </button>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                </a>
                 <div className="p-6">
                   <h3 className="font-semibold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 text-sm">{project.description}</p>
+                  <p className="text-gray-600 text-sm">{project.subtitle}</p>
                 </div>
               </div>
             ))}
@@ -918,50 +922,14 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Get In Touch</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <Mail className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <h4 className="font-medium text-gray-800">Email</h4>
-                    <p className="text-gray-600">saidulislamsaif789@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <Phone className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <h4 className="font-medium text-gray-800">Phone</h4>
-                    <p className="text-gray-600">+880 1632663430</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <MapPin className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <h4 className="font-medium text-gray-800">Address</h4>
-                    <p className="text-gray-600">Pagla, Narayanganj, Bangladesh</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <h4 className="font-semibold text-gray-800 mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-colors">
-                    <Github className="w-5 h-5 text-gray-600" />
-                  </a>
-                  <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-colors">
-                    <Linkedin className="w-5 h-5 text-gray-600" />
-                  </a>
-                  <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-colors">
-                    <Mail className="w-5 h-5 text-gray-600" />
-                  </a>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2888.2123826434727!2d90.45618807409733!3d23.665992892013985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDM5JzU3LjYiTiA5MMKwMjcnMzEuNiJF!5e1!3m2!1sen!2sbd!4v1756550279256!5m2!1sen!2sbd" width="600" height="450" loading="lazy"></iframe>
                 </div>
               </div>
             </div>
@@ -1004,54 +972,23 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">MD Saiful Islam</h3>
-              <p className="text-gray-300 mb-4">
-                Passionate web developer creating beautiful and functional digital experiences.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+      <footer className="bg-gray-100 text-white py-8 text-center">
+        <h2 className="text-7xl font-semibold">MD Saidul Islam</h2>
+        <p className="text-gray-400">Frontend Developer | React | Next.js</p>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-                <li><a href="#skills" className="text-gray-300 hover:text-white transition-colors">Skills</a></li>
-                <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
-              </ul>
-            </div>
+        <p className="mt-2">
+          📧 <a href="mailto:yourname@email.com" className="text-blue-400">yourname@email.com</a>
+        </p>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><span className="text-gray-300">Web Design</span></li>
-                <li><span className="text-gray-300">Web Development</span></li>
-                <li><span className="text-gray-300">Mobile Apps</span></li>
-                <li><span className="text-gray-300">UI/UX Design</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2024 MD Saiful Islam. All rights reserved.
-            </p>
-          </div>
+        <div className="mt-4 space-x-4">
+          <a href="https://github.com/yourusername" target="_blank" className="text-blue-400 hover:underline">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-blue-400 hover:underline">LinkedIn</a>
+          <a href="https://twitter.com/yourusername" target="_blank" className="text-blue-400 hover:underline">Twitter</a>
         </div>
+
+        <p className="mt-6 text-sm text-gray-500">
+          © 2025 Saidul Islam. All rights reserved.
+        </p>
       </footer>
     </div>
   );
