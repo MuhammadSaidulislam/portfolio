@@ -1,49 +1,18 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
-  Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin,
-  Code, Palette, Database, Server, Globe, Smartphone,
-  Calendar, Award, GraduationCap, Briefcase, User, Grid3X3,
-  ChevronRight, Star, Eye, Users, Brain, Zap, Lightbulb, MessageSquare, Crown
+  Mail, Phone, MapPin, Facebook, Github, Linkedin, Search,
+  Code, Server, Globe, Smartphone, Palette, Clock,
+  Calendar, GraduationCap, Briefcase, Users, Brain, Zap, Lightbulb, MessageSquare, Crown
 } from 'lucide-react';
+import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
 import { motion } from "framer-motion";
 
 interface CircularProgressProps {
   percentage: number;
   skill: string;
 }
-
-
-// [
-//   {
-//     "id": 1,
-//     "image": "assets/images/portfolio/songlyrics.png",
-//     "title": "Music API data",
-//     "subtitle": "Here you can search the song and see the full song lyrics",
-//     "link": "https://songlyricsweb.netlify.app/",
-//   },
-//   {
-//     "id": 2,
-//     "image": "assets/images/portfolio/project2.png",
-//     "alt": "portfolio-02",
-//     "title": "E-commerce Website",
-//     "subtitle": "A modern online store with cart and checkout",
-//     "link": "https://example-ecommerce.netlify.app/",
-//     "icon": "fa fa-shopping-cart",
-//     "category": "web"
-//   },
-//   {
-//     "id": 3,
-//     "image": "assets/images/portfolio/project3.png",
-//     "alt": "portfolio-03",
-//     "title": "Blog Platform",
-//     "subtitle": "Publish and share your thoughts easily",
-//     "link": "https://example-blog.netlify.app/",
-//     "icon": "fa fa-pencil",
-//     "category": "branding"
-//   }
-// ]
 
 const portfolioData = [
   {
@@ -117,16 +86,6 @@ const portfolioData = [
     "category": "branding"
   },
   {
-    "id": 8,
-    "image": "/assets/images/portfolio/royal-rooftop-club.png",
-    "alt": "portfolio-08",
-    "title": "React Design",
-    "subtitle": "It's very simple and clean landing page design with React, Bootstrap",
-    "link": "https://royal-rooftop-club.netlify.app/",
-    "icon": "fa fa-search",
-    "category": "branding"
-  },
-  {
     "id": 9,
     "image": "/assets/images/portfolio/demoFive.png",
     "alt": "portfolio-09",
@@ -153,16 +112,6 @@ const portfolioData = [
     "title": "React Design",
     "subtitle": "It's very simple and clean landing page design with React, Bootstrap",
     "link": "https://denmentals.netlify.app/",
-    "icon": "fa fa-search",
-    "category": "branding"
-  },
-  {
-    "id": 12,
-    "image": "/assets/images/portfolio/expectro.png",
-    "alt": "portfolio-12",
-    "title": "Web Development",
-    "subtitle": "It's very simple and clean landing page design with HTML, CSS, JS, JQUERY",
-    "link": "https://expectrodev.com/",
     "icon": "fa fa-search",
     "category": "branding"
   },
@@ -236,16 +185,7 @@ const portfolioData = [
     "icon": "fa fa-search",
     "category": "branding"
   },
-  {
-    "id": 20,
-    "image": "/assets/images/portfolio/bikerland.png",
-    "alt": "portfolio-19",
-    "title": "PSD to HTML",
-    "subtitle": "It's very simple and clean landing page design with HTML, CSS",
-    "link": "https://bikerlandlive.netlify.app/",
-    "icon": "fa fa-search",
-    "category": "branding"
-  },
+
   {
     "id": 21,
     "image": "/assets/images/portfolio/resturent1.png",
@@ -257,11 +197,11 @@ const portfolioData = [
     "category": "branding"
   },
   {
-    "id": 22,
-    "image": "/assets/images/portfolio/songlyrics.png",
+    "id": 23,
+    "image": "/assets/images/portfolio/idtv.png",
     "title": "Music API data",
     "subtitle": "Here you can search the song and see the full song lyrics",
-    "link": "https://songlyricsweb.netlify.app/",
+    "link": "https://classy-kleicha-d755e0.netlify.app",
   },
 ]
 
@@ -319,21 +259,26 @@ export default function Home() {
     );
   };
 
+
   const technicalSkills = [
-    { name: 'HTML5', level: 95 },
-    { name: 'CSS3', level: 90 },
-    { name: 'JavaScript', level: 88 },
-    { name: 'React.js', level: 92 },
-    { name: 'Node.js', level: 85 },
-    { name: 'MongoDB', level: 80 },
+    { name: "HTML5", icon: Globe, color: "from-orange-500 to-red-500" }, // No official HTML icon in react-icons
+    { name: "CSS3", icon: SiCss3, color: "from-blue-500 to-indigo-500" },
+    { name: "JavaScript", icon: Code, color: "from-yellow-400 to-amber-500" }, // No official JS icon used here
+    { name: "Bootstrap", icon: SiBootstrap, color: "from-purple-600 to-violet-700" },
+    { name: "TailwindCSS", icon: SiTailwindcss, color: "from-sky-400 to-blue-500" },
+    { name: "React.js", icon: SiReact, color: "from-cyan-400 to-sky-500" },
+    { name: "Node.js", icon: SiNodedotjs, color: "from-green-600 to-emerald-500" },
+    { name: "MongoDB", icon: SiMongodb, color: "from-emerald-500 to-green-700" },
+    { name: "MySQL", icon: SiMysql, color: "from-blue-600 to-cyan-600" },
+    { name: "Express.js", icon: SiExpress, color: "from-gray-700 to-gray-900" },
+    { name: "TypeScript", icon: SiTypescript, color: "from-blue-600 to-indigo-700" },
+    { name: "Next.js", icon: SiNextdotjs, color: "from-black to-gray-800" },
+    { name: "Redux", icon: SiRedux, color: "from-purple-500 to-indigo-600" },
+    { name: "Git/GitHub", icon: SiGithub, color: "from-gray-800 to-black" },
+    { name: "Firebase", icon: SiFirebase, color: "from-yellow-500 to-amber-600" },
   ];
 
-  const professionalSkills = [
-    { name: 'Web Design', level: 90 },
-    { name: 'Web Development', level: 95 },
-    { name: 'Graphic Design', level: 75 },
-    { name: 'SEO', level: 80 }
-  ];
+
   const softSkills = [
     { name: "Team Work", icon: Users },
     { name: "Problem Solving", icon: Brain },
@@ -341,7 +286,11 @@ export default function Home() {
     { name: "Adapt New Technologies", icon: Lightbulb },
     { name: "Communication", icon: MessageSquare },
     { name: "Leadership", icon: Crown },
+    { name: "Creativity", icon: Palette },
+    { name: "Time Management", icon: Clock },
+    { name: "Critical Thinking", icon: Search },
   ];
+
   const skills = [
     "React",
     "Next.js",
@@ -355,92 +304,7 @@ export default function Home() {
     "GraphQL",
   ];
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce Platform',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
-      description: 'Modern e-commerce solution with payment integration'
-    },
-    {
-      id: 2,
-      title: 'Mobile Banking App',
-      category: 'mobile',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
-      description: 'Secure banking application with biometric authentication'
-    },
-    {
-      id: 3,
-      title: 'Dashboard Analytics',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
-      description: 'Real-time analytics dashboard with data visualization'
-    },
-    {
-      id: 4,
-      title: 'Restaurant Website',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop',
-      description: 'Responsive restaurant website with online ordering'
-    },
-    {
-      id: 5,
-      title: 'Fitness Tracking App',
-      category: 'mobile',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop',
-      description: 'Health and fitness tracking mobile application'
-    },
-    {
-      id: 6,
-      title: 'Corporate Identity',
-      category: 'design',
-      image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&h=300&fit=crop',
-      description: 'Complete branding solution for tech startup'
-    },
-    {
-      id: 7,
-      title: 'Task Management Tool',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
-      description: 'Collaborative project management platform'
-    },
-    {
-      id: 8,
-      title: 'Weather App UI',
-      category: 'design',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop',
-      description: 'Beautiful weather application interface design'
-    },
-    {
-      id: 9,
-      title: 'Social Media Dashboard',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop',
-      description: 'Social media management and analytics tool'
-    },
-    {
-      id: 10,
-      title: 'Travel Booking App',
-      category: 'mobile',
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
-      description: 'Travel booking and itinerary planning application'
-    },
-    {
-      id: 11,
-      title: 'Blog Platform',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68e2c1d273?w=400&h=300&fit=crop',
-      description: 'Modern blogging platform with CMS features'
-    },
-    {
-      id: 12,
-      title: 'Logo Design Collection',
-      category: 'design',
-      image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop',
-      description: 'Collection of professional logo designs'
-    }
-  ];
+
 
   const filteredProjects = activeTab === 'all'
     ? portfolioData
@@ -448,8 +312,15 @@ export default function Home() {
 
   const [active, setActive] = useState("home");
 
-  const sections = ["home", "about", "skills", "experience", "portfolio", "contact"];
+  const sections = ["home", "about", "skills", "experience", "contact"];
 
+  const socialLinks = [
+    { Icon: Github, href: "https://github.com/MuhammadSaidulislam", label: "GitHub" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/md-saidul-islam-153b31150", label: "LinkedIn" },
+    { Icon: Mail, href: "mailto:saidulislamsaif789@email.com", label: "Gmail" },
+    { Icon: Facebook, href: "https://www.facebook.com/md.saidul.islam.496655", label: "Facebook" },
+    { Icon: Phone, href: "tel:+8801632663430", label: "Phone" },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -563,11 +434,11 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 200 }}
                 >
                   <Image
-                    src="/assets/images/portfolio/cruptoone.png"
+                    src="/assets/images/portfolio.png"
                     alt="MD Saiful Islam"
                     width={400}     // must set width
                     height={300}
-                    className="w-full h-full object-cover"
+                    className="w-full"
                   />
                 </motion.div>
 
@@ -588,7 +459,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -597,12 +468,54 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <div className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://undraw.co/api/illustrations/code_thinking.svg"
-                  alt="Coding Illustration"
-                  className="w-full h-full object-contain"
-                />
+              <div className="relative overflow-hidden ">
+                 <div>
+              <div className="flex items-center mb-8">
+                <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
+                <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
+              </div>
+
+              <div className="space-y-8">
+                {/* University */}
+                <div className="border-l-4 border-blue-600 pl-6 pb-6">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                    <span className="text-sm text-gray-500">2017 - 2021</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800">United International University</h4>
+                  <p className="text-gray-600 mt-2">
+                    It&apos;s a reputed university in Bangladesh. I learned a lot of things from here.
+                    These 4 years were very essential and career effective in my life.
+                  </p>
+                </div>
+
+                {/* College */}
+                <div className="border-l-4 border-blue-600 pl-6 pb-6">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                    <span className="text-sm text-gray-500">2013 - 2015</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800">Hazi Misir Ali University & College</h4>
+                  <p className="text-gray-600 mt-2">
+                    I have completed my Higher Secondary study from this college.
+                    My career guidance started from here.
+                  </p>
+                </div>
+
+                {/* School */}
+                <div className="border-l-4 border-blue-600 pl-6">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                    <span className="text-sm text-gray-500">2004 - 2013</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800">Pagla High School</h4>
+                  <p className="text-gray-600 mt-2">
+                    The road to freedom here and everywhere on earth.
+                    My school life was very memorable and enjoyable.
+                  </p>
+                </div>
+              </div>
+            </div>
               </div>
             </motion.div>
 
@@ -697,42 +610,45 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Technical Skills */}
-            <div>
+            <div className="max-w-5xl mx-auto">
               <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">Technical Skills</h3>
-              <div className="space-y-6">
-                {technicalSkills.map((skill, index) => (
-                  <div key={index}>
-                    {/* Skill Label */}
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-blue-600 font-medium">{skill.level}%</span>
-                    </div>
 
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 text-center">
+                {technicalSkills.map((skill, index) => {
+                  const Icon = skill.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex flex-col items-center gap-3"
+                    >
                       <motion.div
-                        className="bg-blue-600 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                        className={`p-6 rounded-2xl bg-gradient-to-br ${skill.color} shadow-lg`}
+                        whileHover={{ scale: 1.15, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        <Icon className="w-10 h-10 text-white" />
+                      </motion.div>
+                      <span className="text-gray-800 font-semibold text-[12px]">{skill.name}</span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
             {/* Professional Skills */}
             <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">What I’m Good At</h3>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-3 gap-8">
                 {softSkills.map((skill, index) => {
                   const Icon = skill.icon;
                   return (
                     <motion.span
                       key={index}
-                      className="flex items-center flex-col gap-3 px-5 py-5 rounded-sm bg-white text-blue-700 font-semibold shadow-md hover:bg-blue-200 cursor-default"
+                      className="flex items-center flex-col text-center gap-3 px-5 py-5 rounded-sm bg-white text-blue-700 font-semibold shadow-md hover:bg-blue-200 cursor-default"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -749,110 +665,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience & Education */}
-      <section id="experience" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Education */}
-            <div>
-              <div className="flex items-center mb-8">
-                <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
-                <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
-              </div>
-
-              <div className="space-y-8">
-                <div className="border-l-4 border-blue-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2018 - 2022</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">University Name, Bachelor Degree</h4>
-                  <p className="text-gray-600 mt-2">
-                    Computer Science and Engineering - Specialized in web technologies,
-                    software engineering, and database management systems.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-blue-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2020 - 2021</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">College Name, Web Development</h4>
-                  <p className="text-gray-600 mt-2">
-                    Advanced web development course focusing on modern JavaScript frameworks,
-                    responsive design, and full-stack development.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-blue-600 pl-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2019</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">School Name, React Native</h4>
-                  <p className="text-gray-600 mt-2">
-                    Mobile app development specialization using React Native framework
-                    for cross-platform mobile applications.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Experience */}
-            <div>
-              <div className="flex items-center mb-8">
-                <Briefcase className="w-8 h-8 text-blue-600 mr-3" />
-                <h3 className="text-2xl font-semibold text-gray-800">Experience</h3>
-              </div>
-
-              <div className="space-y-8">
-                <div className="border-l-4 border-green-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2022 - Present</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">Web Design & Development Dept.</h4>
-                  <p className="text-blue-600 mb-2">Senior Developer</p>
-                  <p className="text-gray-600">
-                    Leading development of complex web applications, mentoring junior developers,
-                    and implementing best practices for scalable architecture.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-green-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2021 - 2022</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">Freelancer Department, Engineering</h4>
-                  <p className="text-blue-600 mb-2">Full Stack Developer</p>
-                  <p className="text-gray-600">
-                    Developed custom web solutions for various clients, specializing in
-                    e-commerce platforms and business management systems.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-green-600 pl-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2020 - 2021</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">Intern Department, Front-end Developer</h4>
-                  <p className="text-blue-600 mb-2">Junior Developer</p>
-                  <p className="text-gray-600">
-                    Started career as junior developer, learned industry standards,
-                    and contributed to multiple client projects using modern frameworks.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-gray-50">
+      <section id="experience" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">Portfolio</h2>
           <p className="text-gray-600 text-center mb-12">Here are some of my latest works</p>
@@ -879,10 +695,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {filteredProjects.slice(0, visibleProjects).map((project) => (
               <div key={project.id} className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                <a href={project.link} className="relative overflow-hidden">
+                <a href={project.link} target="_blank" className="relative overflow-hidden">
                   <Image
                     src={project.image}
-                     alt="MD Saiful Islam"
+                    alt="MD Saiful Islam"
                     width={400}
                     height={400}
                     className="w-full h-58 object-cover group-hover:scale-110 transition-transform duration-300"
@@ -976,18 +792,24 @@ export default function Home() {
         <h2 className="text-7xl font-semibold">MD Saidul Islam</h2>
         <p className="text-gray-400">Frontend Developer | React | Next.js</p>
 
-        <p className="mt-2">
-          📧 <a href="mailto:yourname@email.com" className="text-blue-400">yourname@email.com</a>
-        </p>
-
-        <div className="mt-4 space-x-4">
-          <a href="https://github.com/yourusername" target="_blank" className="text-blue-400 hover:underline">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-blue-400 hover:underline">LinkedIn</a>
-          <a href="https://twitter.com/yourusername" target="_blank" className="text-blue-400 hover:underline">Twitter</a>
+        <div className="mt-4 space-x-4 flex gap-4 justify-center">
+          {socialLinks.map(({ Icon, href, label }, i) => (
+            <motion.a
+              key={i}
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+            >
+              <Icon className="w-5 h-5 text-gray-700" />
+            </motion.a>
+          ))}
         </div>
 
         <p className="mt-6 text-sm text-gray-500">
-          © 2025 Saidul Islam. All rights reserved.
+          © 2022 Saidul Islam. All rights reserved.
         </p>
       </footer>
     </div>
