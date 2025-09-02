@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
 import { motion } from "framer-motion";
+import ContactForm from "@/components/ContactForm";
+
 
 interface CircularProgressProps {
   percentage: number;
@@ -561,6 +563,8 @@ export default function Home() {
         </div>
       </section>
 
+      
+
       {/* What I Do Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -752,7 +756,8 @@ export default function Home() {
 
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-6">Send Message</h3>
-              <div className="space-y-6">
+            <ContactForm />
+              {/* <div className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <input
                     type="text"
@@ -781,7 +786,7 @@ export default function Home() {
                 <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
                   Send Message
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
