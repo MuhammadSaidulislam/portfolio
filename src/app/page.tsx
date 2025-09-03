@@ -214,53 +214,6 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState(9);
 
-  // Circular progress component
-  const CircularProgress: React.FC<CircularProgressProps> = ({ percentage, skill }) => {
-    const radius = 45;
-    const strokeWidth = 8;
-    const normalizedRadius = radius - strokeWidth * 2;
-    const circumference = normalizedRadius * 2 * Math.PI;
-    const strokeDasharray = `${circumference} ${circumference}`;
-    const strokeDashoffset = circumference - (percentage / 100) * circumference;
-
-    return (
-      <div className="flex flex-col items-center">
-        <div className="relative w-24 h-24 mb-3">
-          <svg
-            height={radius * 2}
-            width={radius * 2}
-            className="transform -rotate-90"
-          >
-            <circle
-              stroke="#e5e7eb"
-              fill="transparent"
-              strokeWidth={strokeWidth}
-              r={normalizedRadius}
-              cx={radius}
-              cy={radius}
-            />
-            <circle
-              stroke="#3b82f6"
-              fill="transparent"
-              strokeWidth={strokeWidth}
-              strokeDasharray={strokeDasharray}
-              style={{ strokeDashoffset }}
-              strokeLinecap="round"
-              r={normalizedRadius}
-              cx={radius}
-              cy={radius}
-              className="transition-all duration-1000 ease-out"
-            />
-          </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-lg font-bold text-gray-800">{percentage}%</span>
-          </div>
-        </div>
-        <span className="text-sm font-medium text-gray-600 text-center">{skill}</span>
-      </div>
-    );
-  };
-
 
   const technicalSkills = [
     { name: "HTML5", icon: Globe, color: "from-orange-500 to-red-500" }, // No official HTML icon in react-icons
@@ -337,7 +290,7 @@ export default function Home() {
                   href={`#${sec}`}
                   onClick={() => setActive(sec)}
                   className={`relative pb-1 transition-colors ${active === sec
-                    ? "text-blue-600 font-bold border-b-2 border-blue-600"
+                    ? "text-blue-600 font-bold border-b-2 border-grey-600"
                     : "text-gray-700 hover:text-blue-600"
                     }`}
                 >
@@ -362,7 +315,7 @@ export default function Home() {
             >
               <h1 className="text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-transparent bg-clip-text">
-                  MD Saiful Islam
+                  MD Saidul Islam
                 </span>
               </h1>
 
@@ -399,16 +352,19 @@ export default function Home() {
 
               {/* Social Icons */}
               <div className="flex space-x-4 mb-8 mt-8">
-                {[Github, Linkedin, Mail, Phone].map((Icon, i) => (
-                  <motion.a
-                    key={i}
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
-                    href="#"
-                  >
-                    <Icon className="w-5 h-5 text-gray-700" />
-                  </motion.a>
-                ))}
+                 {socialLinks.map(({ Icon, href, label }, i) => (
+            <motion.a
+              key={i}
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+            >
+              <Icon className="w-5 h-5 text-gray-700" />
+            </motion.a>
+          ))}
               </div>
 
               {/* Download CV */}
@@ -436,7 +392,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 200 }}
                 >
                   <Image
-                    src="/assets/images/portfolio.png"
+                    src="/assets/images/portfolio_one.jpeg"
                     alt="MD Saiful Islam"
                     width={400}     // must set width
                     height={300}
@@ -471,53 +427,53 @@ export default function Home() {
               className="flex justify-center"
             >
               <div className="relative overflow-hidden ">
-                 <div>
-              <div className="flex items-center mb-8">
-                <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
-                <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
-              </div>
-
-              <div className="space-y-8">
-                {/* University */}
-                <div className="border-l-4 border-blue-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2017 - 2021</span>
+                <div>
+                  <div className="flex items-center mb-8">
+                    <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
+                    <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-800">United International University</h4>
-                  <p className="text-gray-600 mt-2">
-                    It&apos;s a reputed university in Bangladesh. I learned a lot of things from here.
-                    These 4 years were very essential and career effective in my life.
-                  </p>
-                </div>
 
-                {/* College */}
-                <div className="border-l-4 border-blue-600 pl-6 pb-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2013 - 2015</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-800">Hazi Misir Ali University & College</h4>
-                  <p className="text-gray-600 mt-2">
-                    I have completed my Higher Secondary study from this college.
-                    My career guidance started from here.
-                  </p>
-                </div>
+                  <div className="space-y-8">
+                    {/* University */}
+                    <div className="border-l-4 border-blue-600 pl-6 pb-6">
+                      <div className="flex items-center mb-2">
+                        <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                        <span className="text-sm text-gray-500">2017 - 2021</span>
+                      </div>
+                      <h4 className="text-lg font-semibold text-gray-800">United International University</h4>
+                      <p className="text-gray-600 mt-2">
+                        It&apos;s a reputed university in Bangladesh. I learned a lot of things from here.
+                        These 4 years were very essential and career effective in my life.
+                      </p>
+                    </div>
 
-                {/* School */}
-                <div className="border-l-4 border-blue-600 pl-6">
-                  <div className="flex items-center mb-2">
-                    <Calendar className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm text-gray-500">2004 - 2013</span>
+                    {/* College */}
+                    <div className="border-l-4 border-blue-600 pl-6 pb-6">
+                      <div className="flex items-center mb-2">
+                        <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                        <span className="text-sm text-gray-500">2013 - 2015</span>
+                      </div>
+                      <h4 className="text-lg font-semibold text-gray-800">Hazi Misir Ali University & College</h4>
+                      <p className="text-gray-600 mt-2">
+                        I have completed my Higher Secondary study from this college.
+                        My career guidance started from here.
+                      </p>
+                    </div>
+
+                    {/* School */}
+                    <div className="border-l-4 border-blue-600 pl-6">
+                      <div className="flex items-center mb-2">
+                        <Calendar className="w-4 h-4 text-gray-500 mr-2" />
+                        <span className="text-sm text-gray-500">2004 - 2013</span>
+                      </div>
+                      <h4 className="text-lg font-semibold text-gray-800">Pagla High School</h4>
+                      <p className="text-gray-600 mt-2">
+                        The road to freedom here and everywhere on earth.
+                        My school life was very memorable and enjoyable.
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-gray-800">Pagla High School</h4>
-                  <p className="text-gray-600 mt-2">
-                    The road to freedom here and everywhere on earth.
-                    My school life was very memorable and enjoyable.
-                  </p>
                 </div>
-              </div>
-            </div>
               </div>
             </motion.div>
 
@@ -563,7 +519,7 @@ export default function Home() {
         </div>
       </section>
 
-      
+
 
       {/* What I Do Section */}
       <section className="py-20 bg-white">
@@ -669,7 +625,7 @@ export default function Home() {
         </div>
       </section>
 
-   
+
 
       {/* Portfolio Section */}
       <section id="experience" className="py-20 bg-gray-50">
@@ -729,12 +685,21 @@ export default function Home() {
           {/* Load More Button */}
           {visibleProjects < filteredProjects.length && (
             <div className="text-center">
-              <button
-                onClick={() => setVisibleProjects(prev => prev + 3)}
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Load More Projects
-              </button>
+              <motion.div
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+>
+  <motion.span
+    whileHover={{ scale: 1.05 }}
+    onClick={() => setVisibleProjects(prev => prev + 3)}
+    className="px-10 py-4 cursor-pointer text-md font-semibold text-black border-2 border-black rounded-sm shadow-sm"
+  >
+    Load More Projects
+  </motion.span>
+</motion.div>
+
             </div>
           )}
         </div>
@@ -756,37 +721,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-6">Send Message</h3>
-            <ContactForm />
-              {/* <div className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-
-                <textarea
-                  rows={6}
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                ></textarea>
-
-                <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                  Send Message
-                </button>
-              </div> */}
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -795,7 +730,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-100 text-white py-8 text-center">
         <h2 className="text-7xl font-semibold">MD Saidul Islam</h2>
-        <p className="text-gray-400">Frontend Developer | React | Next.js</p>
+        <p className="text-gray-400">Frontend Developer | React | Next.js | TypeScript | Tailwind CSS | Redux | Bootstrap | HTML5 | CSS3 | JavaScript (ES6+)</p>
 
         <div className="mt-4 space-x-4 flex gap-4 justify-center">
           {socialLinks.map(({ Icon, href, label }, i) => (
