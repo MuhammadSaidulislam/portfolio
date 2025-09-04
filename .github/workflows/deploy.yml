@@ -22,6 +22,6 @@ jobs:
           protocol: ${{ secrets.FTP_PROTOCOL }}  # use ftps
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./        # folder to upload
-          server-dir: /public_html/  # destination folder on your server
+          server-dir: mdsaidulislam.com/ # destination folder on your server
           passive: true        # Passive mode (recommended)
           dry-run: false       # change to true if you want to test first
