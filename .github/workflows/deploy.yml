@@ -1,38 +1,27 @@
-name: Deploy to Namecheap Shared Hosting
+name: FTP Deploy
 
 on:
   push:
     branches:
-      - main
+      - main  # deploy on push to main branch
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build and Export Next.js
-        run: |
-          npm run build
-          npm run export
-
-      - name: Deploy to cPanel via FTP
+      - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21                               
-          local-dir: ./out/
-          server-dir: /public_html/
+          protocol: ${{ secrets.FTP_PROTOCOL }}  # use ftps
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./        # folder to upload
+          server-dir: /public_html/  # destination folder on your server
+          passive: true        # Passive mode (recommended)
+          dry-run: false       # change to true if you want to test first
