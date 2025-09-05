@@ -15,8 +15,35 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Saidul Islam",
   description: "MD Saidul Islam",
+  keywords: ["portfolio", "developer", "react", "nextjs"],
+  authors: [{ name: "Saidul Islam", url: "https://mdsaidulislam.com" }],
+  openGraph: {
+    title: "Saidul Islam Portfolio",
+    description: "MD Saidul Islam - Web Developer",
+    url: "https://mdsaidulislam.com",
+    siteName: "Saidul Islam",
+    images: [
+      {
+        url: "https://mdsaidulislam.com/og-image.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saidul Islam Portfolio",
+    description: "MD Saidul Islam - Web Developer",
+    images: ["https://mdsaidulislam.com/og-image.png"],
+  },
+  icons: {
+    icon: "/favicon.ico", // root of public folder
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
-
   //  <link rel="shortcut icon" href="assets/images/top.png">
   //   <link rel="shortcut icon" href="assets/images/top.png">
   //   <link rel="shortcut icon" sizes="72x72" href="assets/images/top.png">
