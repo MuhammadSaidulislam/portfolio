@@ -4,17 +4,13 @@ import React, { useState } from 'react';
 import {
   Mail, Phone, MapPin, Facebook, Github, Linkedin, Search,
   Code, Server, Globe, Smartphone, Palette, Clock,
-  Calendar, GraduationCap, Briefcase, Users, Brain, Zap, Lightbulb, MessageSquare, Crown
+  Calendar, GraduationCap, Users, Brain, Zap, Lightbulb, MessageSquare, Crown
 } from 'lucide-react';
 import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 
 
-interface CircularProgressProps {
-  percentage: number;
-  skill: string;
-}
 
 const portfolioData = [
   {

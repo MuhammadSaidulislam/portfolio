@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Saidul Islam",
     images: [
       {
-        url: "https://mdsaidulislam.com/og-image.png",
+        url: "https://mdsaidulislam.com/favicon.png",
         width: 800,
         height: 600,
       },
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Saidul Islam Portfolio",
     description: "MD Saidul Islam - Web Developer",
-    images: ["https://mdsaidulislam.com/og-image.png"],
+    images: ["https://mdsaidulislam.com/favicon.png"],
   },
   icons: {
     icon: "/favicon.ico", // root of public folder
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon.ico",
   },
 };
   //  <link rel="shortcut icon" href="assets/images/top.png">
