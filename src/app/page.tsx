@@ -13,7 +13,6 @@ import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 
 
-
 const portfolioData = [
   {
     "id": 1,
@@ -275,10 +274,11 @@ export default function Home() {
     { Icon: Phone, href: "tel:+8801632663430", label: "Phone" },
   ];
 
+
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-hidden">
       {/* Header */}
-
 
       <header className="bg-white fixed top-0 left-0 w-full shadow-md  z-50">
         <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center w-full">
@@ -290,8 +290,8 @@ export default function Home() {
                 href={`#${sec}`}
                 onClick={() => setActive(sec)}
                 className={`relative pb-1 transition-colors ${active === sec
-                    ? "text-blue-600 font-bold border-b-2 border-gray-600"
-                    : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-600 font-bold border-b-2 border-gray-600"
+                  : "text-gray-700 hover:text-blue-600"
                   }`}
               >
                 {sec.charAt(0).toUpperCase() + sec.slice(1)}
@@ -320,8 +320,8 @@ export default function Home() {
                   setMobileOpen(false);
                 }}
                 className={`block text-lg font-medium ${active === sec
-                    ? "text-blue-600 font-bold"
-                    : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-600 font-bold"
+                  : "text-gray-700 hover:text-blue-600"
                   }`}
               >
                 {sec.charAt(0).toUpperCase() + sec.slice(1)}
@@ -331,8 +331,10 @@ export default function Home() {
         )}
       </header>
 
+     
+
       {/* Hero Section */}
-      
+
       <section id="home" className="pb-[80px] pt-[150px] bg-gradient-to-br from-white via-blue-50 to-blue-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -385,7 +387,7 @@ export default function Home() {
                   <motion.a
                     key={i}
                     whileHover={{ scale: 1.2, rotate: 5 }}
-                    className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
+                    className="p-3 bg-white hover:bg-blue-50 transition"
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -547,7 +549,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
 
       {/* What I Do Section */}
@@ -766,7 +767,7 @@ export default function Home() {
             <motion.a
               key={i}
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
+              className="p-3 bg-white hover:bg-blue-50 transition"
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -781,6 +782,7 @@ export default function Home() {
           © 2022 Saidul Islam. All rights reserved.
         </p>
       </footer>
+
     </div>
   );
 }
