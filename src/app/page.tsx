@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import {
   Mail, Phone, MapPin, Facebook, Github, Linkedin, Search,
   Code, Server, Globe, Smartphone, Palette, Clock,
-  Calendar, GraduationCap, Users, Brain, Zap, Lightbulb, MessageSquare, Crown
+  Calendar, GraduationCap, Users, Brain, Zap, Lightbulb, MessageSquare, Crown,
+  Menu,
+  X
 } from 'lucide-react';
 import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -209,7 +211,7 @@ export default function Home() {
 
   const [activeTab, setActiveTab] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState(9);
-
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const technicalSkills = [
     { name: "HTML5", icon: Globe, color: "from-orange-500 to-red-500" }, // No official HTML icon in react-icons
@@ -274,33 +276,64 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-hidden">
       {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <nav className="max-w-6xl mx-auto px-6 py-7">
-          <div className="flex justify-center">
-            <div className="hidden md:flex space-x-10 text-xl font-semibold">
-              {sections.map((sec) => (
-                <a
-                  key={sec}
-                  href={`#${sec}`}
-                  onClick={() => setActive(sec)}
-                  className={`relative pb-1 transition-colors ${active === sec
-                    ? "text-blue-600 font-bold border-b-2 border-grey-600"
+
+
+      <header className="bg-white fixed top-0 left-0 w-full shadow-md  z-50">
+        <nav className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center w-full">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex mx-auto space-x-10 text-lg font-semibold">
+            {sections.map((sec) => (
+              <a
+                key={sec}
+                href={`#${sec}`}
+                onClick={() => setActive(sec)}
+                className={`relative pb-1 transition-colors ${active === sec
+                    ? "text-blue-600 font-bold border-b-2 border-gray-600"
                     : "text-gray-700 hover:text-blue-600"
-                    }`}
-                >
-                  {sec.charAt(0).toUpperCase() + sec.slice(1)}
-                </a>
-              ))}
-            </div>
+                  }`}
+              >
+                {sec.charAt(0).toUpperCase() + sec.slice(1)}
+              </a>
+            ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 ml-auto rounded-md text-gray-700 hover:text-blue-600"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </nav>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileOpen && (
+          <div className="md:hidden bg-white shadow-md px-6 pb-5 space-y-4">
+            {sections.map((sec) => (
+              <a
+                key={sec}
+                href={`#${sec}`}
+                onClick={() => {
+                  setActive(sec);
+                  setMobileOpen(false);
+                }}
+                className={`block text-lg font-medium ${active === sec
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-700 hover:text-blue-600"
+                  }`}
+              >
+                {sec.charAt(0).toUpperCase() + sec.slice(1)}
+              </a>
+            ))}
+          </div>
+        )}
       </header>
 
-
       {/* Hero Section */}
-      <section id="home" className="py-20 bg-gradient-to-br from-white via-blue-50 to-blue-100">
+      
+      <section id="home" className="pb-[80px] pt-[150px] bg-gradient-to-br from-white via-blue-50 to-blue-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -309,7 +342,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-transparent bg-clip-text">
                   MD Saidul Islam
                 </span>
@@ -348,19 +381,19 @@ export default function Home() {
 
               {/* Social Icons */}
               <div className="flex space-x-4 mb-8 mt-8">
-                 {socialLinks.map(({ Icon, href, label }, i) => (
-            <motion.a
-              key={i}
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-            >
-              <Icon className="w-5 h-5 text-gray-700" />
-            </motion.a>
-          ))}
+                {socialLinks.map(({ Icon, href, label }, i) => (
+                  <motion.a
+                    key={i}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    className="p-3 bg-white shadow-md rounded-xl hover:bg-blue-50 transition"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                  >
+                    <Icon className="w-5 h-5 text-gray-700" />
+                  </motion.a>
+                ))}
               </div>
 
               {/* Download CV */}
@@ -598,7 +631,7 @@ export default function Home() {
             {/* Professional Skills */}
             <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">What I’m Good At</h3>
-              <div className="grid grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                 {softSkills.map((skill, index) => {
                   const Icon = skill.icon;
                   return (
@@ -682,19 +715,19 @@ export default function Home() {
           {visibleProjects < filteredProjects.length && (
             <div className="text-center">
               <motion.div
-  initial={{ opacity: 0, x: 50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
->
-  <motion.span
-    whileHover={{ scale: 1.05 }}
-    onClick={() => setVisibleProjects(prev => prev + 3)}
-    className="px-10 py-4 cursor-pointer text-md font-semibold text-black border-2 border-black rounded-sm shadow-sm"
-  >
-    Load More Projects
-  </motion.span>
-</motion.div>
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setVisibleProjects(prev => prev + 3)}
+                  className="px-10 py-4 cursor-pointer text-md font-semibold text-black border-2 border-black rounded-sm shadow-sm"
+                >
+                  Load More Projects
+                </motion.span>
+              </motion.div>
 
             </div>
           )}
@@ -724,8 +757,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-100 text-white py-8 text-center">
-        <h2 className="text-7xl font-semibold">MD Saidul Islam</h2>
+      <footer className="bg-gray-100 text-white py-8 text-center px-3">
+        <h2 className="text-4xl lg:text-7xl mb-3 font-semibold">MD Saidul Islam</h2>
         <p className="text-gray-400">Frontend Developer | React | Next.js | TypeScript | Tailwind CSS | Redux | Bootstrap | HTML5 | CSS3 | JavaScript (ES6+)</p>
 
         <div className="mt-4 space-x-4 flex gap-4 justify-center">
