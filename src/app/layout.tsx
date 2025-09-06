@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Saidul Islam",
     images: [
       {
-        url: "https://mdsaidulislam.com/favicon.png",
+        url: "https://mdsaidulislam.com/portfolio.jpeg",
         width: 800,
         height: 600,
       },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Saidul Islam Portfolio",
     description: "MD Saidul Islam - Web Developer",
-    images: ["https://mdsaidulislam.com/favicon.png"],
+    images: ["https://mdsaidulislam.com/portfolio.jpeg"],
   },
   icons: {
     icon: "/favicon.ico", // root of public folder
