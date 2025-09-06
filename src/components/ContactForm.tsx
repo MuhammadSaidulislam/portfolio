@@ -13,7 +13,7 @@ const ContactForm = () => {
 
     if (!state.succeeded) {
       const result = await handleSubmit(e);
-      formRef.current.reset();
+      formRef.current?.reset();
     }
 
 
