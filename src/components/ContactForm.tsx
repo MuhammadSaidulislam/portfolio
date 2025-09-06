@@ -10,13 +10,10 @@ const ContactForm = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!state.succeeded) {
       const result = await handleSubmit(e);
-      formRef.current.reset();
+      formRef.current?.reset();
     }
-
-
   };
 
   return (
