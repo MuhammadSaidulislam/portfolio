@@ -1,75 +1,62 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from '@formspree/react';
+
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [status, setStatus] = useState("");
 
+  const [state, handleSubmit] = useForm("xjkejvqy");
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("Sending...");
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus("Message sent successfully!");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus(data.message || "Something went wrong.");
-      }
-    } catch (error) {
-      setStatus("Something went wrong.");
+    if (!state.succeeded) {
+      const result = await handleSubmit(e);
+      formRef.current.reset();
     }
+
+
   };
+
   return (
     <div className="space-y-6">
-      <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+      <form ref={formRef} onSubmit={onSubmit} className="space-y-4 max-w-lg mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <input
+            id="name"
             type="text"
             name="name"
-            value={form.name}
-            onChange={handleChange}
             placeholder="Your Name"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
           <input
+            id="email"
             type="email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
             placeholder="Your Email"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
         <input
+          id="subject"
           type="text"
           name="subject"
-          value={form.subject}
-          onChange={handleChange}
           placeholder="Subject"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
+        <ValidationError prefix="Subject" field="subject" errors={state.errors} />
         <textarea
           rows={6}
+          id="message"
           name="message"
-          value={form.message}
-          onChange={handleChange}
           placeholder="Your Message"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
         ></textarea>
+
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -81,13 +68,9 @@ const ContactForm = () => {
             whileHover={{ scale: 1.05 }}
             className="px-10 py-4 cursor-pointer text-md font-semibold text-black border-2 border-black rounded-sm shadow-sm"
           >
-            <button type="submit">
-               {status ? (  <p className="mt-2 text-gray-700">{status}</p> ) : ( "Send Message" )}
-            </button>
+            <button type="submit" disabled={state.submitting} className="mt-2 text-gray-700">{state.succeeded ? "Thanks For Message!" : "Send Message"} </button>
           </motion.span>
         </motion.div>
-
-
       </form>
     </div>
   )
