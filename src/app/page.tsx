@@ -15,6 +15,26 @@ import ContactForm from "@/components/ContactForm";
 
 const portfolioData = [
   {
+    "id": 24,
+    "image": "/assets/images/portfolio/duckllm.png",
+    "alt": "portfolio-24",
+    "title": "DuckLLM AI Platform",
+    "subtitle": "A one-stop AI aggregation platform enabling seamless access to multiple mainstream AI interfaces, including users in China and Hong Kong.",
+    "link": "https://duckllm.com",
+    "icon": "fa fa-search",
+    "category": "branding"
+  },
+  {
+    "id": 20,
+    "image": "/assets/images/portfolio/deskie.jpg",
+    "alt": "portfolio-20",
+    "title": "Deskie Coworking Web App",
+    "subtitle": "A modern and user-friendly SaaS platform designed for coworking spaces.",
+    "link": "https://www.deskie.com",
+    "icon": "fa fa-search",
+    "category": "branding"
+  },
+  {
     "id": 1,
     "image": "/assets/images/portfolio/juno.png",
     "alt": "portfolio-02",
@@ -184,7 +204,6 @@ const portfolioData = [
     "icon": "fa fa-search",
     "category": "branding"
   },
-
   {
     "id": 21,
     "image": "/assets/images/portfolio/resturent1.png",
@@ -202,6 +221,7 @@ const portfolioData = [
     "subtitle": "Here you can search the song and see the full song lyrics",
     "link": "https://classy-kleicha-d755e0.netlify.app",
   },
+  
 ]
 
 
