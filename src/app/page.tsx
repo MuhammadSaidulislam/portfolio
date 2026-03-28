@@ -17,12 +17,32 @@ const portfolioData = [
   {
     "id": 24,
     "image": "/assets/images/portfolio/duckllm.png",
-    "alt": "portfolio-24",
-    "title": "DuckLLM AI Platform",
-    "subtitle": "A one-stop AI aggregation platform enabling seamless access to multiple mainstream AI interfaces, including users in China and Hong Kong.",
-    "link": "https://duckllm.com",
+    "alt": "portfolio-25",
+    "title": "DuckLLM",
+    "subtitle": "This website showcases DuckLLM, a Japanese language interface for a powerful AI-driven large language model platform.",
+    "link": "https://duckllm.com/ja",
     "icon": "fa fa-search",
-    "category": "branding"
+    "category": "web"
+  },
+   {
+    "id": 27,
+    "image": "/assets/images/portfolio/sorio.png",
+    "alt": "portfolio-27",
+    "title": "Sorio",
+    "subtitle": "Create Viral Faceless Content & Get Views Fast with Sorio, the AI-Powered Video Creation Platform for YouTube & TikTok.",
+    "link": "https://www.sorio.ai",
+    "icon": "fa fa-search",
+    "category": "web"
+  },
+  {
+    "id": 26,
+    "image": "/assets/images/portfolio/travel.png",
+    "alt": "portfolio-pagoda-travel",
+    "title": "Pagoda Travel",
+    "subtitle": "A B2B travel-planning platform that helps travel agencies and local guides build custom Japan itineraries faster and collaborate directly.",
+    "link": "https://www.pagoda.travel/",
+    "icon": "fa fa-search",
+    "category": "web-platform"
   },
   {
     "id": 20,
@@ -31,6 +51,16 @@ const portfolioData = [
     "title": "Deskie Coworking Web App",
     "subtitle": "A modern and user-friendly SaaS platform designed for coworking spaces.",
     "link": "https://www.deskie.com",
+    "icon": "fa fa-search",
+    "category": "branding"
+  },
+  {
+    "id": 25,
+    "image": "/assets/images/portfolio/thais.png",
+    "alt": "portfolio-24",
+    "title": "Thais Helena Ribeiro",
+    "subtitle": "This website serves as a refined digital presence for an architecture and interior-design studio led by Thais Helena Ribeiro in São Paulo.",
+    "link": "https://thaishelenaribeiro.com.br",
     "icon": "fa fa-search",
     "category": "branding"
   },
@@ -221,7 +251,7 @@ const portfolioData = [
     "subtitle": "Here you can search the song and see the full song lyrics",
     "link": "https://classy-kleicha-d755e0.netlify.app",
   },
-  
+
 ]
 
 
@@ -351,7 +381,7 @@ export default function Home() {
         )}
       </header>
 
-     
+
 
       {/* Hero Section */}
 
@@ -799,7 +829,7 @@ export default function Home() {
         </div>
 
         <p className="mt-6 text-sm text-gray-500">
-          © 2022 Saidul Islam. All rights reserved.
+          © {new Date().getFullYear()} Saidul Islam. All rights reserved.
         </p>
       </footer>
 
