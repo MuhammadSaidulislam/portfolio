@@ -8,7 +8,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
-import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact } from "react-icons/si";
+import { SiCss3, SiRedux, SiBootstrap, SiFirebase, SiMysql, SiNodedotjs, SiExpress, SiTypescript, SiMongodb, SiGithub, SiNextdotjs, SiTailwindcss, SiReact, SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 
@@ -322,6 +322,7 @@ export default function Home() {
     { Icon: Mail, href: "mailto:saidulislamsaif789@email.com", label: "Gmail" },
     { Icon: Facebook, href: "https://www.facebook.com/md.saidul.islam.496655", label: "Facebook" },
     { Icon: Phone, href: "tel:+8801632663430", label: "Phone" },
+    { Icon: SiWhatsapp, href: "https://wa.me/8801632663430", label: "WhatsApp" }
   ];
 
 
