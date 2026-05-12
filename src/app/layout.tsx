@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +45,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+  manifest: "/manifest.json",
 };
   //  <link rel="shortcut icon" href="assets/images/top.png">
   //   <link rel="shortcut icon" href="assets/images/top.png">
@@ -60,7 +63,27 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased white-vertion black-bg`}
       >
         {children}
+        
+    <Script
+      id="schema-person"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Saidul Islam",
+          url: "https://mdsaidulislam.com",
+          image: "https://mdsaidulislam.com/portfolio.jpeg",
+          sameAs: [
+            "https://github.com/yourgithub",
+            "https://linkedin.com/in/yourlinkedin"
+          ],
+          jobTitle: "Full Stack Developer",
+        }),
+      }}
+    />
       </body>
+      
     </html>
   );
 }
